@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>弹窗</title>
+    <link rel="stylesheet" href="../../dist/css/zui.mobile.css">
+</head>
+<body>
+    <header class="zui-header zui-header-fixed zui-row">
+      <div class="zui-header-back zui-col2"><i class="zui-icon-left"></i>返回</div>
+      <div class="zui-header-title zui-col8">弹窗</div>
+      <div class="zui-header-list zui-col2"></div>
+    </header>
+    <div class="zui-main">
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>弹窗</span>
+            </div>
+            <div class="zui-list-body" style="padding-right:1rem;">
+                <div id="layer1" class="zui-btn zui-btn-fluid">简单弹窗</div>
+                <div id="layer2" class="zui-btn zui-btn-fluid">自定义时间关闭</div>
+                <div id="layer3" class="zui-btn zui-btn-fluid">msg样式信息</div>
+                <div id="layer4" class="zui-btn zui-btn-fluid">底部样式信息</div>
+                <div id="layer5" class="zui-btn zui-btn-fluid">头部按钮样式</div>
+                <div id="layer6" class="zui-btn zui-btn-fluid">侧滑导航-导航滑出</div>
+                <div id="layer7" class="zui-btn zui-btn-fluid">侧滑导航-联动滑出</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>参数</th>
+                            <th>描述</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>type</td>
+                            <td>
+                                设置弹窗的类型 {Number} <br>
+                                默认：0 （0表示信息框，1表示页面层，2表示加载层）
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>offsetType</td>
+                            <td>
+                                设置侧滑导航展示位置。{Number} <br>
+                                默认：0 （0代表left，1代表right）
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>skin</td>
+                            <td>
+                                弹框样式。{String} <br>
+                                由于存在一些按钮样式，特设置skin属性。
+                                默认：正常样式（按钮在内容下方，为按钮分布在两侧）<br>
+                                "footer":底部对话框样式<br>
+                                "topbtn":头部按钮样式，适用于picker选取时样式。<br>
+                                "msg":设置提示消息样式<br>
+                                "offset"：设置后，展示为侧滑导航样式，只有为此参数时，[anim]参数才可设置侧滑动画
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>content</td>
+                            <td>
+                                设置弹窗的内容 {String} <br>
+                                默认：必填项
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>title</td>
+                            <td>
+                                设置弹窗的标题 {String} <br>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>time</td>
+                            <td>
+                                控制自动关闭弹窗的时间（单位ms）。{Number} <br>
+                                默认：不开启自动关闭
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>className</td>
+                            <td>
+                                设置此弹窗的class名称。 这样，就可以通过css控制弹窗样式。 {String} <br>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>btn</td>
+                            <td>
+                                设置所需按钮 {String/Array}  <br>
+                                不设置则不显示按钮。一个按钮btn:"按钮"。两个按钮btn:["按钮一","按钮二"]，其中第一个为取消，第二个为确认。
+                                默认：不设置。
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>anim</td>
+                            <td>
+                                动画类型 {String/Boolean} <br>
+                                可支持动画类型：scale-in（由小到大） scale-out（由大到小） up(从下向上弹出) <br>
+                                当skin为：offset时，可设置侧滑导航动画为：offset-slip（侧滑导航滑出） offset-link（侧滑导航跟主界面联动滑动）
+                                默认：scale-in
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>mask</td>
+                            <td>
+                                遮罩层是否显示 {String/Boolean} <br>
+                                默认：true。
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>maskCLose</td>
+                            <td>
+                                是否点击遮罩时关闭弹窗 {BooLean} <br>
+                                默认：true。
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>maskType</td>
+                            <td>
+                                遮罩的类别 {Number}<br>
+                                默认：0（0表示遮罩全覆盖，1表示遮罩除了头部导航以外内容，3表示遮罩除了头部导航、底部导航以外内容） 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>area</td>
+                            <td>
+                                设置内容的宽高  {Array}<br>
+                                默认情况下是自动适应，可以通过area:["500px","300px"]设置固定宽高
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>success</td>
+                            <td>
+                                弹窗成功弹出时回调 {Function}<br>
+                                返回当前弹窗对象
+                                success:function(elem){
+                                   console.log(elem);
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>yes</td>
+                            <td>
+                                点击确认按钮 {Function}<br>
+                                返回当前层索引值
+                                yes:function(index){
+                                   console.log(index);
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>no</td>
+                            <td>
+                                点击取消按钮 {Function}<br>
+                                返回当前层索引值
+                                no:function(index){
+                                   console.log(index);
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>end</td>
+                            <td>
+                                弹出层销毁时回调 {Function}<br>
+                                返回当前层索引值
+                                end:function(index){
+                                   console.log(index);
+                                }
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+       
+    </div>
+</body>
+</html>
+<script src="../../dist/js/zui.js"></script>
+<script src="../../dist/js/layer.js"></script>
+<script>
+    let layer1 =  document.documentElement.querySelector("#layer1");
+    let layer2 =  document.documentElement.querySelector("#layer2");
+    let layer3 =  document.documentElement.querySelector("#layer3");
+    let layer4 =  document.documentElement.querySelector("#layer4");
+    let layer5 =  document.documentElement.querySelector("#layer5");
+    let layer6 =  document.documentElement.querySelector("#layer6");
+    let layer7 =  document.documentElement.querySelector("#layer7");
+
+    //简单弹窗
+    layer1.addEventListener("click",function(e){
+        layer.open({
+            content:"hello layer!!"
+        })
+    })
+
+    //自定义时间关闭
+    layer2.addEventListener("click",function(e){
+        layer.open({
+            content:"hello layer!!",
+            time:2000
+        })
+    })
+
+    //msg样式信息
+    layer3.addEventListener("click",function(e){
+        layer.open({
+            content:"hello layer!!",
+            skin:"msg",
+            time:2000
+        })
+    })
+
+    //底部样式信息
+    layer4.addEventListener("click",function(e){
+        layer.open({
+            content:"选择您需要操作的按钮！！",
+            skin:"footer",
+            btn:["取消","确定"]
+        })
+    })
+
+    //头部按钮样式
+    layer5.addEventListener("click",function(e){
+        layer.open({
+            content:"这里是自定义内容区域。",
+            skin:"topbtn",
+            btn:["取消","确定"]
+        })
+    })
+    //侧滑导航样式
+    layer6.addEventListener("click",function(e){
+        layer.open({
+            content:"这里是自定义内容区域。",
+            skin:"offset",
+            anim:"offset-slip",
+            maskType:1
+        })
+    })
+    //侧滑导航样式 联动滑出
+    layer7.addEventListener("click",function(e){
+        layer.open({
+            content:"这里是自定义内容区域。",
+            offsetType:1,
+            skin:"offset",
+            anim:"offset-link",
+            maskType:1
+        })
+    })
+
+</script>

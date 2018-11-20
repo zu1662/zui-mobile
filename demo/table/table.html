@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表格</title>
+    <link rel="stylesheet" href="../../dist/css/zui.mobile.css">
+</head>
+<body>
+    <header class="zui-header zui-header-fixed zui-row">
+      <div class="zui-header-back zui-col2"><i class="zui-icon-left"></i>返回</div>
+      <div class="zui-header-title zui-col8">表格</div>
+      <div class="zui-header-list zui-col2"></div>
+    </header>
+    <div class="zui-main" style="margin-bottom: 4rem;">
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>基本表格样式</span>
+            </div>
+            <div class="zui-list-body" style="padding-right:1rem;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>名称</th>
+                            <th>描述</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>表头 <code>&lt;thead&gt;</code></td>
+                            <td>
+                                一般表格的第一行作为表头，用于描述表中每一列数据名称。为区别于表格其他行，表头具备不同的样式，例如字体加粗等。在垂直显示一组数据的表格中，表头也可能是垂直的第一列，而不是行。</td>
+                        </tr>
+                        <tr>
+                            <td>内容 <code>&lt;tbody&gt;</code></td>
+                            <td>
+                                一般内容会在单元格内靠左对齐，对于数字可能靠右对齐比较好。在一些表格中，内容可以按单元格选择或者按行选择，选中的部分会以不同的样式区分。为了使得行与行便于区分，通常也会使得行交替使用不同的背景色。图片或其他控件也可以应用单元格中。</td>
+                        </tr>
+                        <tr>
+                            <td>表尾 <code>&lt;tfoot&gt;</code></td>
+                            <td>与表头作用相同，或者用来放置与表相关补充数据或操作。</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>名称</th>
+                            <th>描述</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>行边框表格样式</span>
+            </div>
+            <div class="zui-list-body" style="padding-right:1rem;">
+                <table class="row-line">
+                    <thead style="text-align:left;">
+                        <tr>
+                            <th>名称</th>
+                            <th>类型</th>
+                            <th>评分</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>肖申克的救赎</td>
+                            <td>剧情/犯罪</td>
+                            <td>9.6</td>
+                        </tr>
+                        <tr>
+                            <td>霸王别姬 </td>
+                            <td>剧情/爱情/同性</td>
+                            <td>9.6</td>
+                        </tr>
+                        <tr>
+                            <td>这个杀手不太冷</td>
+                            <td>剧情/动作/犯罪</td>
+                            <td>9.4</td>
+                        </tr>
+                        <tr>
+                            <td>阿甘正传</td>
+                            <td>剧情/爱情</td>
+                            <td>9.4</td>
+                        </tr>    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>隔行变色表格样式</span>
+            </div>
+            <div class="zui-list-body" style="padding-right:1rem;">
+                <table class="row-bgc">
+                    <thead style="text-align:left;">
+                        <tr>
+                            <th>名称</th>
+                            <th>类型</th>
+                            <th>评分</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>肖申克的救赎</td>
+                            <td>剧情/犯罪</td>
+                            <td>9.6</td>
+                        </tr>
+                        <tr>
+                            <td>霸王别姬 </td>
+                            <td>剧情/爱情/同性</td>
+                            <td>9.6</td>
+                        </tr>
+                        <tr>
+                            <td>这个杀手不太冷</td>
+                            <td>剧情/动作/犯罪</td>
+                            <td>9.4</td>
+                        </tr>
+                        <tr>
+                            <td>阿甘正传</td>
+                            <td>剧情/爱情</td>
+                            <td>9.4</td>
+                        </tr>    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>横向滑动表格</span>
+            </div>
+            <div class="zui-list-body" style="padding-right:1rem;">
+                <div class="zui-table">
+                    <div class="fix-table">
+                        <table class="row-bgc">
+                            <thead style="text-align:left;">
+                                <tr>
+                                    <th>影片</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>无双</td>
+                                </tr>
+                                <tr>
+                                    <td>找到你 </td>
+                                </tr>
+                                <tr>
+                                    <td>我的间谍前男友</td>
+                                </tr>
+                                <tr>
+                                    <td>嗝嗝老师</td>
+                                </tr>    
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="flow-table">
+                        <table class="row-bgc">
+                            <thead style="text-align:left;">
+                                <tr>
+                                    <th>综合票房(万)</th>
+                                    <th>票房占比</th>
+                                    <th>排片场次</th>
+                                    <th>排片占比</th>
+                                    <th>场均人次</th>
+                                    <th>上座率</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>573.10</td>
+                                    <td>32.8%</td>
+                                    <td>67657</td>
+                                    <td>23.6%</td>
+                                    <td>3</td>
+                                    <td>2.8%</td>
+                                </tr>
+                                <tr>
+                                    <td>263.39</td>
+                                    <td>15.0%</td>
+                                    <td>37414</td>
+                                    <td>13.0%</td>
+                                    <td>3</td>
+                                    <td>2.9%</td>
+                                </tr>
+                                <tr>
+                                    <td>210.53</td>
+                                    <td>12.8%</td>
+                                    <td>43332</td>
+                                    <td>15.1%</td>
+                                    <td>2</td>
+                                    <td>3.1%</td>
+                                </tr>
+                                <tr>
+                                    <td>184.56</td>
+                                    <td>10.5%</td>
+                                    <td>26589</td>
+                                    <td>9.2%</td>
+                                    <td>3</td>
+                                    <td>3.1%</td>
+                                </tr>    
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div>注：滑动表格适用于右侧文字量不多的情况下使用。一般为排列性数据展示。<br>
+                    左侧固定表格，可以通过设置[.fix-table]的宽度来调整宽度值。
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</body>
+</html>
+<script src="../../dist/js/zui.js"></script>
+<script>
+    
+
+</script>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片上传</title>
+    <link rel="stylesheet" href="../../dist/css/zui.mobile.css">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <header class="zui-header zui-header-fixed zui-row">
+        <div class="zui-header-back zui-col2"><i class="zui-icon-left"></i>返回</div>
+        <div class="zui-header-title zui-col8">图片上传</div>
+        <div class="zui-header-list zui-col2"></div>
+    </header>
+    <div class="zui-main">
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>图片上传（默认）</span>
+            </div>
+            <ul class="zui-list-body" style="padding-right:1rem;background-color: transparent;">
+                <div class="zui-upload" id="upload1"></div>
+            </ul>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>图片上传（自定义参数）</span>
+            </div>
+            <ul class="zui-list-body" style="padding-right:1rem;background-color: transparent;">
+                <div class="zui-upload" id="upload2"></div>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../../dist/js/zui.js"></script>
+<script src="../../dist/js/upload.js"></script>
+
+<script>
+   
+    let datePickerValue = document.documentElement.querySelector("#datePickerValue");
+    let upload1 = new UploadImg({
+        dom:"#upload1",
+        addImg:"./addImg.png"
+    })
+    let upload2 = new UploadImg({
+        dom:"#upload2",
+        addImg:"./addImg.png",
+        maxNum:5,
+        area:["100px","100px"],
+        fileSize:100
+    })
+    
+   
+</script>

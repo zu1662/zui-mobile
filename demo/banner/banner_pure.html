@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../dist/css/zui.mobile.css">
+    <style>
+        .zui-header{
+            background-color: #39f;
+            color: #fff;
+        }
+        .zui-banner{
+            padding: 20px 10px;
+            color: #fff;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header class="zui-header zui-header-fixed zui-row">
+        <div class="zui-header-back zui-col2"><i class="zui-icon-left"></i>返回</div>
+        <div class="zui-header-title zui-col8">纯色通栏</div>
+        <div class="zui-header-list zui-col2"></div>
+    </header>
+    <div class="zui-main">
+        <div class="zui-banner zui-banner-pure">
+            <div class="zui-banner-fill"></div>
+            纯色通栏<br>
+            颜色可以自己设置。<br>
+            当下拉时，以目前颜色补充。
+        </div>
+    </div>
+</body>
+</html>
+<script src="../../dist/js/zui.js"></script>
+<script>
+    //设置下拉效果
+    document.addEventListener("touchstart",function(e){
+        let fill = document.documentElement.querySelector(".zui-banner-fill");
+        let target = e.target;
+        //获取初始相对于屏幕的位置
+        let startY = e.changedTouches[0].clientY;
+        document.addEventListener("touchmove",function(e){
+            if(target){
+                //获取目前距顶部 滚动高度
+                var t= document.documentElement.scrollTop||document.body.scrollTop;
+                //当滚动值为0，说明到达顶部，可以伸展
+                if(t == 0){
+                    //把滑动的长度，设置阻尼后传给填充块
+                    let nowH = e.changedTouches[0].clientY-startY;
+                    nowH = damping(nowH);
+                    fill.setAttribute("style",`height:${nowH}px`);
+                }
+            }
+        })
+        document.addEventListener("touchend",function(e){
+            if(target){
+                target == null;
+                //手指放开后，填充块高度变为0
+                fill.setAttribute("style",`height:0px;transition: height .2s ease-out;`);
+            }
+        })
+    })
+    //添加阻尼效果函数
+    function damping(value) {
+        var step = [20, 40, 60, 80, 100];
+        var rate = [0.5, 0.4, 0.3, 0.2, 0.1];
+
+        var scaleedValue = value;
+        var valueStepIndex = step.length;
+
+        while (valueStepIndex--) {
+            if (value > step[valueStepIndex]) {
+                scaleedValue = (value - step[valueStepIndex]) * rate[valueStepIndex];
+                for (var i = valueStepIndex; i > 0; i--) {
+                    scaleedValue += (step[i] - step[i - 1]) * rate[i - 1];
+                }
+                scaleedValue += step[0] * 1;
+                break;
+            }
+        }
+        return scaleedValue;
+    }
+</script>

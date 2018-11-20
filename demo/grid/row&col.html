@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>栅格布局</title>
+    <link rel="stylesheet" href="../../dist/css/zui.mobile.css">
+</head>
+<body>
+    <header class="zui-header zui-header-fixed zui-row">
+        <div class="zui-header-back zui-col2"><i class="zui-icon-left"></i>返回</div>
+        <div class="zui-header-title zui-col8">栅格化布局</div>
+        <div class="zui-header-list zui-col2"></div>
+    </header>
+    <div class="zui-main">
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>带边框</span>
+            </div>
+            <div class="zui-list-body" style="padding-left:0;">
+                <div class="zui-row">
+                    <div class="zui-col3 zui-align-center zui-col-border-right" style="height:3rem;">25%</div>
+                    <div class="zui-col3 zui-align-center zui-col-border-right" style="height:3rem;">25%</div>
+                    <div class="zui-col3 zui-align-center zui-col-border-right" style="height:3rem;">25%</div>
+                    <div class="zui-col3 zui-align-center" style="height:3rem;">25%</div>
+                </div>
+            </div>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>间隙</span>
+            </div>
+            <div class="zui-list-body" style="padding-left:0;">
+                <div class="zui-row" style="flex-wrap: nowrap;">
+                    <div class="zui-col3 zui-align-center zui-row-bg" style="height:3rem;"></div>
+                    <div class="zui-col3 zui-align-center zui-row-bg" style="height:3rem;margin: 0 .5rem; "></div>
+                    <div class="zui-col3 zui-align-center zui-row-bg" style="height:3rem;margin-right: .5rem; "></div>
+                    <div class="zui-col3 zui-align-center zui-row-bg" style="height:3rem;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>多层等分</span>
+            </div>
+            <div class="zui-list-body" style="padding-left:0;">
+                <div class="zui-row">
+                    <div class="zui-col6 zui-align-center zui-col-border-right zui-col-border-bottom" style="height:3rem;">col6</div>
+                    <div class="zui-col6 zui-align-center zui-col-border-bottom" style="height:3rem;">col6</div>
+                    <div class="zui-col6 zui-align-center zui-col-border-right" style="height:3rem;">col6</div>
+                    <div class="zui-col6 zui-align-center" style="height:3rem;">col6</div>
+                </div>
+            </div>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>多层等分间隙</span>
+            </div>
+            <div class="zui-list-body" style="padding-left:0;">
+                <div class="zui-row" style="flex-wrap: nowrap;margin-top: .5rem;">
+                    <div class="zui-col6 zui-align-center zui-row-bg" style="height:3rem;margin: 0 .5rem;">col6</div>
+                    <div class="zui-col6 zui-align-center zui-row-bg" style="height:3rem;margin-right: .5rem;">col6</div>
+                </div>
+                <div class="zui-row" style="flex-wrap: nowrap;margin: .5rem 0;">
+                    <div class="zui-col6 zui-align-center zui-row-bg" style="height:3rem;margin: 0 .5rem;">col6</div>
+                    <div class="zui-col6 zui-align-center zui-row-bg" style="height:3rem;margin-right: .5rem;">col6</div>
+                </div>
+            </div>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>多层复杂等分</span>
+            </div>
+            <div class="zui-list-body" style="padding-left:0;">
+                <div class="zui-row">
+                    <div class="zui-col4 zui-col-border-right zui-align-center" style="height:6rem;">1</div>
+                    <div class="zui-col8 zui-row " style="height:6rem;">
+                        <div class="zui-col6 zui-align-center zui-col-border-right zui-col-border-bottom" style="height:3rem;">2</div>
+                        <div class="zui-col6 zui-align-center zui-col-border-bottom" style="height:3rem;">3</div>
+                        <div class="zui-col6 zui-align-center zui-col-border-right" style="height:3rem;">4</div>
+                        <div class="zui-col6 zui-align-center" style="height:3rem;">5</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>多层复杂等分间隙</span>
+            </div>
+            <div class="zui-list-body" style="padding-left:0;">
+                <div class="zui-row" style="flex-wrap: nowrap;">
+                    <div class="zui-col4 zui-row-bg" style="height:6rem;margin: .5rem;"></div>
+                    <div class="zui-col8" style="height:6rem;">
+                        <div class="zui-row" style="flex-wrap: nowrap; ">
+                            <div class="zui-col6 zui-row-bg" style="height:2.75rem;margin-right: .5rem;"></div>
+                            <div class="zui-col6 zui-row-bg" style="height:2.75rem;margin-right: .5rem;"></div>
+                        </div>
+                        <div class="zui-row" style="flex-wrap: nowrap;margin-top: .5rem;">
+                            <div class="zui-col6 zui-row-bg" style="height:2.75rem;margin-right: .5rem;"></div>
+                            <div class="zui-col6 zui-row-bg" style="height:2.75rem;margin-right: .5rem;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../../dist/js/zui.js"></script>

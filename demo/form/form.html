@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单元素</title>
+    <link rel="stylesheet" href="../../dist/css/zui.mobile.css">
+</head>
+<body>
+    <header class="zui-header zui-header-fixed zui-row">
+        <div class="zui-header-back zui-col2"><i class="zui-icon-left"></i>返回</div>
+        <div class="zui-header-title zui-col8">表单元素</div>
+        <div class="zui-header-list zui-col2"></div>
+    </header>
+    <div class="zui-main">
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>开关switch</span>
+            </div>
+            <div class="zui-list-body" style="padding-right:1rem;">
+                <div class="zui-list-item">
+                    <div class="zui-list-item-title">基本样式</div>
+                    <div class="zui-list-item-after">
+                        <input class="zui-switch" type="checkbox">
+                        <input class="zui-switch" type="checkbox" checked>
+                    </div>
+                </div>
+                <div class="zui-list-item">
+                    <div class="zui-list-item-title">自定义颜色</div>
+                    <div class="zui-list-item-after">
+                        <input id="switch_1" class="zui-switch" type="checkbox" checked>
+                        <style>#switch_1:checked{background-color: #4cd964;border-color: #4cd964;}</style>
+                    </div>
+                </div>
+                <div class="zui-list-item">
+                    <div class="zui-list-item-title">带字体</div>
+                    <div class="zui-list-item-after">
+                        <input class="zui-switch zui-switch-font" type="checkbox" checked>
+                    </div>
+                </div>
+                <div class="zui-list-item">
+                    <div class="zui-list-item-title">禁用</div>
+                    <div class="zui-list-item-after">
+                        <input class="zui-switch zui-switch-font zui-switch-disabled" disabled="disabled" type="checkbox">
+                        <input class="zui-switch zui-switch-font zui-switch-disabled" disabled="disabled" type="checkbox" checked>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>按钮计数器</span>
+            </div>
+            <div class="zui-list-body" style="padding-right:1rem;">
+                <ul class="zui-count">
+                    <li>-</li>
+                    <li><input type="text" value="50"></li>
+                    <li>+</li>
+                </ul>
+            </div>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>简单input滑块</span>
+            </div>
+            <div class="zui-list-body" style="padding-right:1rem;">
+                <input class="zui-input-range" class="" type="range" >
+            </div>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>自定义滑块(js生成)</span>
+            </div>
+            <div class="zui-list-body" style="padding-right:1rem;">
+                <div class="zui-range" id="range1"></div>
+            </div>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>自定义参数滑块(js生成)</span>
+            </div>
+            <div class="zui-list-body" style="padding-right:1rem;">
+                <div class="zui-range" id="range2"></div>
+            </div>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>自定义复杂滑块(js生成)</span>
+            </div>
+            <div class="zui-list-body" style="padding-right:1rem;">
+                <div class="zui-range" id="range3"></div>
+            </div>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>自定义标尺1</span>
+            </div>
+            <div class="zui-list-body" style="padding-right:1rem;">
+                <div class="zui-ruler" id="ruler1"></div>
+            </div>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>自定义标尺2</span>
+            </div>
+            <div class="zui-list-body" style="padding-right:1rem;">
+                <div class="zui-ruler" id="ruler2"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../../dist/js/zui.js"></script>
+<script src="../../dist/js/range.js"></script>
+<script src="../../dist/js/ruler.js"></script>
+<script>
+    window.onload = function(){
+        //按钮加减器:使用原生js进行赋值，是比较麻烦的。建议使用zepto.js或者jquery.js来进行赋值取值
+        let liList = document.documentElement.querySelectorAll(".zui-count li");
+        for(let i = 0; i<liList.length;i++){
+            liList[i].addEventListener("click",function(){
+                let input = this.parentNode.querySelector("input");
+                let nowValue = input.getAttribute("value");
+                if(this.innerHTML == "-"){
+                    input.setAttribute("value",parseInt(nowValue) - 1)
+                }
+                if(this.innerHTML == "+"){
+                    input.setAttribute("value",parseInt(nowValue) + 1)
+                }
+            })
+        }
+
+        //简单初始化滑块
+        new Range("#range1")
+        //自定义参数滑块
+        new Range("#range2",{
+            min:100,
+            max:200,
+            value:150,
+            scale:true
+        })
+        //自定义范围滑块
+        var a = new Range("#range3",{
+            min:100,//最小值，整数：默认0
+            max:500,//最大值，整数：默认100
+            range:true,//是否开启范围滑块：设置为true，则出现两个拖拽块
+            value:[200,400],//滑块初始默认值：若滑块范围为开启状态，需要传入数组，表示开始和结尾：[30,60]
+            step:5,//拖动步长
+            scale:true
+        })
+
+        new Ruler("#ruler1",{
+            start:150,//起始值，整数：默认0
+            end:190,//结束值，整数：默认100
+            vaule:160,//初始值
+            unit:1,//滑尺最小单元[单位]
+            span:5,//滑尺跨度
+            title:["身高","选择身高（CM）"],//滑尺title信息。传入数组列表，第一个为大标题，第二个为小标题。不传则不显示
+        })
+        new Ruler("#ruler2",{
+            start:0,//起始值，整数：默认0
+            end:60000,//结束值，整数：默认100
+            vaule:0,//初始值
+            unit:100,//滑尺最小单元[单位]
+            span:1000,//滑尺跨度
+            title:["金额","我要转入（元）"],//滑尺title信息。传入数组列表，第一个为大标题，第二个为小标题。不传则不显示
+        })
+    }
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>渐变导航栏</title>
+    <link rel="stylesheet" href="../../dist/css/zui.mobile.css">
+</head>
+<body>
+    <header class="zui-header zui-header-fixed zui-header-transparent zui-row">
+        <div class="zui-header-back zui-col2"><i class="zui-icon-left"></i>返回</div>
+        <div class="zui-header-title zui-col8">列表</div>
+        <div class="zui-header-list zui-col2"></div>
+    </header>
+    <div class="zui-main" style="height:130%">
+        <img src="cat.jpg" width="100%"  alt="">
+        <p style="margin:10px 15px;font-size: 16px;">
+            透明导航栏，默认情况为透明状态。<br>
+            当向下滚动式，导航栏由透明转为不透明状态。<br>
+            当向上滚动式，导航栏重新恢复透明状态。<br>
+
+        </p>
+    </div>
+</body>
+</html>
+<script src="../../dist/js/zui.js"></script>
+<script>
+    // 透明导航栏
+    let zui_header_transparent =  document.documentElement.querySelector(".zui-header-transparent");
+    if(zui_header_transparent){
+        window.onscroll = function(e){
+            var t= document.documentElement.scrollTop||document.body.scrollTop;
+            zui_header_transparent.setAttribute("style",`background-color: rgba(247, 247, 247, ${t/150});`)
+        }
+    }
+</script>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选择器</title>
+    <link rel="stylesheet" href="../../dist/css/zui.mobile.css">
+    <style>
+        .value{
+            text-align: center;
+            margin: 1rem 0;
+        }
+        #picker4Yes{
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="zui-header zui-header-fixed zui-row">
+        <div class="zui-header-back zui-col2"><i class="zui-icon-left"></i>返回</div>
+        <div class="zui-header-title zui-col8">选择器(picker)</div>
+        <div class="zui-header-list zui-col2"></div>
+    </header>
+    <div class="zui-main">
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>原生 SELECT</span>
+            </div>
+            <ul class="zui-list-body" style="padding-right:1rem; background-color: transparent;">
+               <select class="zui-select">
+                    <option value="1">item-1</option>
+                    <option value="1">item-2</option>
+                    <option value="1">item-3</option>
+                    <option value="1">item-4</option>
+               </select>
+            </ul>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>时间选择器</span>
+            </div>
+            <ul class="zui-list-body" style="padding-right:1rem;background-color: transparent;">
+                <div class="zui-picker zui-date-picker" id="datePicker"></div>
+                <div class="value" id="datePickerValue"></div>
+            </ul>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>一级选择器</span>
+            </div>
+            <ul class="zui-list-body" style="padding-right:1rem;background-color: transparent;">
+                <div class="zui-picker" id="picker1"></div>
+                <div class="value" id="picker1Value"></div>
+            </ul>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>二级级联选择器</span>
+            </div>
+            <ul class="zui-list-body" style="padding-right:1rem;background-color: transparent;">
+                <div class="zui-picker" id="picker2"></div>
+                <div class="value" id="picker2Value"></div>
+            </ul>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>三级级联选择器</span>
+            </div>
+            <ul class="zui-list-body" style="padding-right:1rem;background-color: transparent;">
+                <div class="zui-picker" id="picker3"></div>
+                <div class="value" id="picker3Value"></div>
+            </ul>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>弹框组件-弹出级联选择器</span>
+            </div>
+            <ul class="zui-list-body" style="padding-right:1rem;background-color: transparent;">
+                <div class="zui-btn zui-btn-fluid" zui-layer="{'target':'#picker4box','skin':'topbtn'}" id="pickerPopBtn">弹出级联选择器</div>
+                <div class="zui-layer-inner" id="picker4box">
+                    <div class="zui-picker" id="picker4"></div>
+                    <div class="zui-btn zui-btn-fluid" id="picker4Yes">确定</div>
+                </div>
+                <div class="value" id="picker4Value"></div>
+            </ul>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>选取选择器</span>
+            </div>
+            <ul class="zui-list-body" style="padding-right:1rem;background-color: transparent;">
+               <div class="zui-btn zui-btn-fluid" zui-layer='{"maskType":1,"target":"#touchPicker","area":["100%","100%"]}' id="popTouchPickerBtn">弹出选取选择器</div>
+               <div class="value" id="picker5Value"></div>
+               
+               <div class="zui-picker zui-touch-picker zui-layer-inner" id="touchPicker" >
+                   <div class="picker-title">
+                       请选择业态
+                   </div>
+                    <div class="picker-body">
+                        <div class="left">
+                            <div class="left-item">酒店餐饮</div>
+                            <div class="left-item active">休闲娱乐</div>
+                            <div class="left-item">美容美发</div>
+                            <div class="left-item">美容美发</div>
+                            <div class="left-item">美容美发</div>
+                            <div class="left-item">美容美发</div>
+                            <div class="left-item">美容美发</div>
+                            <div class="left-item">美容美发</div>
+                            <div class="left-item">美容美发</div>
+                            <div class="left-item">美容美发</div>
+                            <div class="left-item">美容美发</div>
+                            <div class="left-item">美容美发</div>
+                            <div class="left-item">美容美发</div>
+                        </div>
+                        <div class="right">
+                            <div class="right-item">餐馆</div>
+                            <div class="right-item">食堂</div>
+                            <div class="right-item">面包店</div>
+                            <div class="right-item">冷饮甜品店</div>
+                            <div class="right-item">咖啡馆</div>
+                            <div class="right-item">茶艺馆</div>
+                            <div class="right-item">小吃店</div>
+                            <div class="right-item">快餐店</div>
+                            <div class="right-item">西餐厅</div>
+                            <div class="right-item">火锅店</div>
+                            <div class="right-item">大排档</div>
+                            <div class="right-item">烧烤店</div>
+                            <div class="right-item">快餐店</div>
+                            <div class="right-item">西餐厅</div>
+                            <div class="right-item">火锅店</div>
+                            <div class="right-item">大排档</div>
+                            <div class="right-item">烧烤店</div>
+                        </div>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../../dist/js/touch.js"></script>
+<script src="../../dist/js/zui.js"></script>
+<script src="../../dist/js/picker.js"></script>
+<script src="../../dist/js/datePicker.js"></script>
+<script src="../../dist/js/layer.js"></script>
+<script src="city_data.js"></script>
+<script>
+   
+    let datePickerValue = document.documentElement.querySelector("#datePickerValue");
+    let picker1Value = document.documentElement.querySelector("#picker1Value");
+    let picker2Value = document.documentElement.querySelector("#picker2Value");
+    let picker3Value = document.documentElement.querySelector("#picker3Value");
+    let picker4Value = document.documentElement.querySelector("#picker4Value");
+    let picker5Value = document.documentElement.querySelector("#picker5Value");
+    let touchPicker_right = document.documentElement.querySelector("#touchPicker .right");
+    let popTouchPickerBtn = document.documentElement.querySelector("#popTouchPickerBtn");
+
+    touchPicker_right.addEventListener("click",function(){
+        picker5Value.innerHTML = "您选取了元素。。。"
+        layer.closeAll()
+    })
+
+    let datePicker = new DatePicker("#datePicker",{type:8})
+    datePicker.itemChange = function(index, _self){
+        datePickerValue.innerHTML = `选取的时间为：${_self.yearVal + _self.year}-${_self.month + 1}-${_self.day + 1} ${_self.hour}:${_self.minute}:${_self.second}`
+    }
+
+    let picker1 = new Picker("#picker1",{
+        type:1,
+        data:cityData3,
+    })
+
+    picker1.firstItemChange = function(index,data){
+        let value = picker1.getItems();
+        picker1Value.innerHTML = `您的选择为：${value[0].name} `;
+    }
+
+
+    let picker2 = new Picker("#picker2",{
+        type:2,
+        data:cityData3,
+    })
+    picker2.secondItemChange = function(index,data){
+        let value = picker2.getItems();
+        picker2Value.innerHTML = `您的选择为：${value[0].name} ${value[1].name}`;
+    }
+    
+    let picker3 = new Picker("#picker3",{
+        type:3,
+        data:cityData3,
+    })
+    picker3.thirdItemChange = function(index,data){
+        let value = picker3.getItems();
+        picker3Value.innerHTML = `您的选择为：${value[0].name} ${value[1].name} ${value[2].name}`;
+    }
+
+    let pickerPopBtn = document.documentElement.querySelector("#pickerPopBtn");
+    pickerPopBtn.addEventListener("click",function(e){
+        console.log(this)
+    })
+
+    let picker4 = new Picker("#picker4",{
+        type:3,
+        data:cityData3
+    })
+    let picker4Yes = document.documentElement.querySelector("#picker4Yes");
+    picker4Yes.addEventListener("click",function(e){
+        let value = picker4.getItems();
+        picker4Value.innerHTML = `您的选择为：${value[0].name} ${value[1].name} ${value[2].name}`;
+        layer.closeAll(); 
+    })
+
+    
+   
+</script>

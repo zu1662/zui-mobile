@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自隐藏导航栏</title>
+    <link rel="stylesheet" href="../../dist/css/zui.mobile.css">
+    <style>
+        .zui-main{
+            height: 130%;
+        }
+    </style>
+</head>
+<body>
+    <header class="zui-header zui-header-fixed zui-header-hidden  zui-row">
+        <div class="zui-header-back zui-col2"><i class="zui-icon-left"></i>返回</div>
+        <div class="zui-header-title zui-col8">列表</div>
+        <div class="zui-header-list zui-col2"></div>
+    </header>
+    <div class="zui-main">
+        <img src="cat.jpg" width="100%"  alt="">
+        <p style="margin:10px 15px;font-size: 16px;">
+            自隐藏导航栏，默认情况为显示状态。<br>
+            当向下滚动式，导航栏自动隐藏。<br>
+            当向上滚动式，导航栏重新恢复。<br>
+
+        </p>
+    </div>
+</body>
+</html>
+<script src="../../dist/js/zui.js"></script>
+<script>
+    // 自隐藏导航栏
+    let zui_header_hidden =  document.documentElement.querySelector(".zui-header-hidden");
+    let main = document.documentElement.querySelector(".zui-main");
+    let nowTop=0;
+    if(zui_header_hidden){
+        document.addEventListener("touchstart",function(e){
+            let target = e.target;
+            //获取初始相对于屏幕的位置
+            let startY = e.changedTouches[0].clientY;
+            document.addEventListener("touchend",function(e){
+               if(target){
+                    let endY = e.changedTouches[0].clientY;
+                    if(endY - startY < 0){
+                            zui_header_hidden.setAttribute("style",`top:-4rem;`);
+                            main.setAttribute("style",`top:0rem;transition: top .5s ease-in-out;`);
+                    }else{
+                            zui_header_hidden.setAttribute("style",`top:0;`);
+                            main.setAttribute("style",`top:4rem;transition: top .5s ease-in-out;`);
+                    }
+               }
+            })
+        })
+        
+    }
+</script>

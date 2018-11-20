@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>导航栏</title>
+    <link rel="stylesheet" href="../../dist/css/zui.mobile.css">
+</head>
+<body>
+    <header class="zui-header zui-header-fixed zui-row">
+      <div class="zui-header-back zui-col2"><i class="zui-icon-left"></i>返回</div>
+      <div class="zui-header-title zui-col8">列表</div>
+      <div class="zui-header-list zui-col2"></div>
+    </header>
+    <div class="zui-main" style="margin-bottom: 4rem;">
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>头部导航栏</span>
+            </div>
+            <div class="zui-list-body" style="padding-right:1rem;">
+                <header class="zui-header zui-row">
+                    <div class="zui-header-back zui-col2"><i class="zui-icon-left"></i>返回</div>
+                    <div class="zui-header-title zui-col8">标题</div>
+                    <div class="zui-header-list zui-col2">编辑</div>
+                </header>
+            </div>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>头部导航栏(图标)</span>
+            </div>
+            <div class="zui-list-body" style="padding-right:1rem;">
+                <header class="zui-header zui-row">
+                    <div class="zui-header-back zui-col2"><i class="zui-icon-home"></i></div>
+                    <div class="zui-header-title zui-col8">标题</div>
+                    <div class="zui-header-list zui-col2"><i class="zui-icon-link"></i></div>
+                </header>
+            </div>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>透明渐变导航栏</span>
+            </div>
+            <div class="zui-list-body" style="padding-right:1rem;">
+                <a href="nav_transparent.html">透明渐变导航栏</a>
+            </div>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>滚动隐藏导航栏</span>
+            </div>
+            <div class="zui-list-body" style="padding-right:1rem;">
+                <a href="nav_hidden.html">滚动隐藏导航栏</a>
+            </div>
+        </div>
+        <div class="zui-list">
+            <div class="zui-list-title">
+                <span>底部导航栏</span>
+            </div>
+            <div class="zui-list-body" style="padding-right:1rem;">
+                <footer class="zui-footer zui-row" id="footer1">
+                    <div class="zui-col3 zui-footer-item active"><i class="zui-icon-home"></i><span>tab1</span></div>
+                    <div class="zui-col3 zui-footer-item"><i class="zui-icon-layers"></i><span>tab2</span></div>
+                    <div class="zui-col3 zui-footer-item"><i class="zui-icon-mail"></i><span>tab3</span></div>
+                    <div class="zui-col3 zui-footer-item"><i class="zui-icon-aperture"></i><span>tab4</span></div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <footer class="zui-footer zui-footer-fixed zui-row">
+        <div class="zui-col2 zui-footer-item active"><i class="zui-icon-home"></i><span>tab1</span></div>
+        <div class="zui-col2 zui-footer-item"><i class="zui-icon-layers"></i><span>tab2</span></div>
+        <div class="zui-col4 zui-footer-item "><div class="zui-footer-add"><i class="zui-icon-plus"></i></div></div>
+        <div class="zui-col2 zui-footer-item"><i class="zui-icon-mail"></i><span>tab3</span></div>
+        <div class="zui-col2 zui-footer-item"><i class="zui-icon-aperture"></i><span>tab4</span></div>
+    </footer>
+</body>
+</html>
+<script src="../../dist/js/zui.js"></script>
+<script>
+    //导航栏点击切换
+    let footer = document.documentElement.querySelector(".zui-footer");
+    let item = footer.querySelectorAll(".zui-footer-item");
+    item.forEach(function(value,index){
+        value.addEventListener("click",function(e){
+            item.forEach(function(value,index){
+                value.classList.remove("active");
+            })
+            value.classList.add("active");
+        })
+    })
+
+</script>
